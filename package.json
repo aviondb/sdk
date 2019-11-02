@@ -1,11 +1,11 @@
 {
-  "name": "bnc-sdk",
-  "version": "0.2.3",
-  "description": "SDK to connect to the blocknative backend via a websocket connection",
+  "name": "dappkit-sdk",
+  "version": "0.0.0",
+  "description": "SDK to connect to the dappkit backend via a websocket connection",
   "keywords": [
     "ethereum",
     "websocket",
-    "blocknative",
+    "dappkit",
     "notifications"
   ],
   "main": "dist/bnc-sdk.js",
@@ -14,10 +14,13 @@
   "files": [
     "dist"
   ],
-  "author": "Aaron Barnard <abarnard@protonmail.com>",
+  "contributors": [
+    "Aaron Barnard <abarnard@protonmail.com>",
+    "Vaibhav Saini <hi@simpleaswater.com>"
+  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/blocknative/sdk"
+    "url": "https://github.com/dappkit/sdk"
   },
   "license": "MIT",
   "engines": {
