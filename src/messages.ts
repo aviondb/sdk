@@ -9,7 +9,7 @@ export function sendMessage(msg: EventObject) {
 
 export function handleMessage(msg: { data: string }): void {
   const { status, reason, event, nodeSyncStatus, connectionId } = JSON.parse(msg.data)
-
+  console.log(JSON.parse(msg.data))
   if (connectionId) {
     if (typeof window !== 'undefined') {
       window.localStorage.setItem('connectionId', connectionId)

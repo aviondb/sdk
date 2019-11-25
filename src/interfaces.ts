@@ -49,7 +49,7 @@ export interface TransactionEvent {
 
 export interface InitializationOptions {
   networkId: number
-  dappId: string
+  dappId?: string
   transactionHandlers?: TransactionHandler[]
   apiUrl?: string
   ws?: any

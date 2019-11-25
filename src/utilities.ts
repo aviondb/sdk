@@ -6,7 +6,7 @@ import { Emitter, EventObject, NotificationObject } from './interfaces'
 export function createEmitter(): Emitter {
   return {
     listeners: {},
-    on: function(eventCode, listener) {
+    on: function (eventCode, listener) {
       // check if valid eventCode
       switch (eventCode) {
         case 'txSent':
@@ -31,7 +31,7 @@ export function createEmitter(): Emitter {
       // add listener for the eventCode
       this.listeners[eventCode] = listener
     },
-    emit: function(state) {
+    emit: function (state) {
       if (this.listeners[state.eventCode]) {
         return this.listeners[state.eventCode](state)
       }

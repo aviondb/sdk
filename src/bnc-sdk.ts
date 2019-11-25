@@ -18,7 +18,6 @@ export default function sdk(options: InitializationOptions): API {
   const { dappId, networkId, transactionHandlers = [], apiUrl, ws } = options
   const alreadyConnected = !!session.socket
 
-  session.dappId = dappId
   session.networkId = networkId
   session.clients.push({
     transactionHandlers,
@@ -26,13 +25,15 @@ export default function sdk(options: InitializationOptions): API {
     accounts: []
   })
 
+  let websocket_addr = 'wss://dappkit.io:6999'
+
   if (!alreadyConnected) {
     if (ws) {
-      session.socket = new SturdyWebSocket(apiUrl || 'wss://api.blocknative.com/v0', {
+      session.socket = new SturdyWebSocket(apiUrl || websocket_addr, 'echo-protocol', {
         wsConstructor: ws
       })
     } else {
-      session.socket = new SturdyWebSocket(apiUrl || 'wss://api.blocknative.com/v0')
+      session.socket = new SturdyWebSocket(apiUrl || websocket_addr, 'echo-protocol')
     }
 
     session.socket.onopen = () => {
